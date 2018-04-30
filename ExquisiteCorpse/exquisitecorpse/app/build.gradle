@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "com.fredericletellier.exquisitecorpse"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion 15
+        targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
 
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
@@ -72,42 +72,46 @@ android {
  */
 dependencies {
     // App's dependencies, including test
-    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
-    implementation "com.google.guava:guava:$rootProject.guavaVersion"
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
-    implementation "com.squareup.sqlbrite2:sqlbrite:$rootProject.sqlbriteVersion"
+    implementation "com.android.support:appcompat-v7:26.1.0"
+    implementation "com.android.support:cardview-v7:26.1.0"
+    implementation "com.android.support:design:26.1.0"
+    implementation "com.android.support:recyclerview-v7:26.1.0"
+    implementation "com.android.support:support-v4:26.1.0"
+    implementation "com.android.support.test.espresso:espresso-idling-resource:3.0.2"
+    implementation "com.google.guava:guava:22.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.3"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation "com.squareup.sqlbrite2:sqlbrite:2.0.0"
 
     // Dependencies for local unit tests
-    testImplementation "junit:junit:$rootProject.ext.junitVersion"
-    testImplementation "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
-    testImplementation "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
+    implementation 'com.google.firebase:firebase-database:15.0.0'
+    implementation 'com.google.firebase:firebase-auth:15.0.0'
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.mockito:mockito-all:1.10.19"
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
 
     // Android Testing Support Library's runner and rules
-    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
-    androidTestImplementation "com.android.support.test:rules:$rootProject.ext.runnerVersion"
+    androidTestImplementation "com.android.support.test:runner:1.0.2"
+    androidTestImplementation "com.android.support.test:rules:1.0.2"
 
     // Dependencies for Android unit tests
-    androidTestImplementation "junit:junit:$rootProject.ext.junitVersion"
-    androidTestImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    androidTestImplementation "junit:junit:4.12"
+    androidTestImplementation "org.mockito:mockito-core:1.10.19"
     androidTestImplementation 'com.google.dexmaker:dexmaker:1.2'
     androidTestImplementation 'com.google.dexmaker:dexmaker-mockito:1.2'
 
     // Espresso UI Testing
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion"
-    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
-    androidTestImplementation "com.android.support.test.espresso.idling:idling-concurrent:$rootProject.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:3.0.2"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
+    androidTestImplementation "com.android.support.test.espresso.idling:idling-concurrent:3.0.2"
 
     // Resolve conflicts between main and test APK:
-    androidTestImplementation "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
-    androidTestImplementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    androidTestImplementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
-    androidTestImplementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    androidTestImplementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    androidTestImplementation "com.android.support:support-annotations:27.1.1"
+    androidTestImplementation "com.android.support:support-v4:26.1.0"
+    androidTestImplementation "com.android.support:recyclerview-v7:26.1.0"
+    androidTestImplementation "com.android.support:appcompat-v7:26.1.0"
+    androidTestImplementation "com.android.support:design:26.1.0"
 }
+
+apply plugin: 'com.google.gms.google-services'
